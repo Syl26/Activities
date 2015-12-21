@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/main.css">
 
   </head>
-  <body ng-app="activities" ng-controller="mainController">
+  <body ng-app="activities">
 
     <!--== 4. Header ==-->
 
@@ -64,8 +64,9 @@
             </div> <!-- /.header-description -->
         </section> <!-- /#header -->
 
-    
-                
+        <div ng-view></div>
+
+      
         <a href="#header" id="back-to-top" class="top"><i class="fa fa-chevron-up"></i></a>
     
         
@@ -81,7 +82,11 @@
     <script src="nivo-lightbox/nivo-lightbox.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
     <script src="app/app.js"></script>
+  <!--Here are the controllers-->
+    <script src="app/controllers/home.js"></script>
+    <script src="app/controllers/profiles.js"></script>
 
   </body>
 </html>
