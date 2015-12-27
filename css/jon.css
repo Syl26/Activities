@@ -2,3 +2,31 @@
     background-color: #204d74;
     color: white;
 }
+
+.content {
+    margin-top: 118px;
+    text-align: center;
+}
+
+.title {
+    background-image: url('../images/searchBg.jpg');
+    color: white;
+    text-align: center;
+    padding: 70px 0;
+}
+
+
+/*SEARCH*/
+.searchBox {
+    background: orange;
+    padding: 100px;
+    color: white;
+    font-size: 15px;
+}
+
+.searchBox input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*PROFILE*/

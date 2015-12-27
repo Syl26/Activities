@@ -22,47 +22,22 @@
   <body ng-app="activities">
 
     <!--== 4. Header ==-->
+    <div class="navigationbar  navbar-fixed-top">
+        <div class="container">
+            <a href="#" class="logo">
+                <h1>tEACH other</h1>
+            </a>
+            <i class="fa fa-bars pull-right" id="iconhideshow"></i>
+            <ul class="nav hide nav-pills pull-right">
+                <li role="presentation"><a href="#header">Home</a></li>
+                <li role="presentation"><a href="#service">Mission</a></li>
+                <li role="presentation"><a href="#about">About</a></li>
+                <li role="presentation"><a href="#works">What to share?</a></li>
+                <li role="presentation"><a href="#contact">Contact</a></li>
+            </ul>
+        </div> <!-- /.container -->
+    </div> <!-- /.navigation-bar -->
 
-       <section class="header" id="header">
-            <div class="navigationbar  navbar-fixed-top">
-                <div class="container">
-                    <a href="#" class="logo">
-                        <h1>tEACH other</h1>
-                    </a>
-                    <i class="fa fa-bars pull-right" id="iconhideshow"></i>
-                    <ul class="nav hide nav-pills pull-right">
-                      <li role="presentation"><a href="#header">Home</a></li>
-                      <li role="presentation"><a href="#service">Mission</a></li>
-                      <li role="presentation"><a href="#about">About</a></li>
-                      <li role="presentation"><a href="#works">What to share?</a></li>
-                      <li role="presentation"><a href="#contact">Contact</a></li>
-                    </ul>
-                </div> <!-- /.container -->
-            </div> <!-- /.navigation-bar -->
-            <div class="header-description text-center">
-                <div class="overlay">
-                <div class="header-content wow bounce animated">
-                    <h1 class="heading">One + One
-                    </h1>
-                    <p class="heading-subtitle">
-                        Create. Teach. Learn
-                    </p> 
-                </div>
-                </div> <!-- /.header-content -->   
-            
-                <div class="wow zoomIn button-down" data-wow-duration="1s" data-wow-offset="100">
-                  <div class="wow tada" data-wow-delay="1s" data-wow-duration="1s">
-                    <div class="wow rubberBand" data-wow-delay="2000ms" data-wow-duration="1s">
-                      <div class="wow pulse" data-wow-delay="300ms" data-wow-iteration="infinite" data-wow-duration="2s">
-                        <a href="#service" title="Go down">
-                          <img src="images/button_downr.png" alt="MaterialUp" class="center">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div> <!-- /.header-description -->
-        </section> <!-- /#header -->
 
         <div ng-view></div>
 
