@@ -1,24 +1,21 @@
-<div class="profile creator">
-    <div class="title">
-        <h2>Create your profile</h2>
-    </div>
-    <div class="information">
-        <input type="text" name="profile" placeholder="Find what you're looking for">
-        <button class="btn btn-success">Search</button>
-    </div>
-</div>
+<div class="content">
 
 
-<div ng-switch-when="form">
     <form name="profileForm" ng-submit="text.push(myText); myText = null;">
-		  
-		  <label for="fullname">Full Name</label>
-		  <input type="text" name="fullname" ng-model="data.fullname" placeholder="Enter your full name"/><br>
-        
+
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" ng-model="data.fullname" placeholder="Enter your full name" />
+        <br>
+
         <label for="skills">Talents & Skills</label>
-		  <textarea ng-model="data.skills" name="Talentsandskills"></textarea><br>
-        
+        <input type="text" ng-model="skill" name="Talentsandskills" />
+        <br>
+        <button ng-click="addskill()" ng-disabled='skill == ""'>Add Skill</button>
+        <ul><li ng-repeat="skill in skillsArray">{{ skill }}</li></ul>
+
         <label for="upload">Uploads</label>
-		  <input type="text" name="upload" ng-model="data.upload" placeholder="Upload pictures and videos"/><br>
-		  
+        <input type="text" name="upload" ng-model="data.upload" placeholder="Upload pictures and videos" />
+        <br>
+
     </form>
+</div>

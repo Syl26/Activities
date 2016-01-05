@@ -14,6 +14,10 @@ angular.module("activities", ["ngRoute"])
                 templateUrl: 'app/views/search.html',
                 controller: 'searchController',
             })
+            .when('/personalprofile', {
+                templateUrl: 'app/views/personalprofile.html',
+                controller: 'personalController',
+            })
             .otherwise({
                 redirectTo: '/'
             });
