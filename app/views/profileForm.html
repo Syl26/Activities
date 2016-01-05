@@ -1,0 +1,25 @@
+<div class="content">
+    <h2>Become a member</h2>
+
+    <form class="profile-form" name="profileForm" ng-submit="text.push(myText); myText = null;">
+
+        <input type="text" name="fullname" ng-model="data.fullname" placeholder="Enter your full name"/>
+        <br>
+
+        <input type="text" ng-model="skill" name="Talentsandskills" placeholder="Enter your skill"/>
+        <button class="btn btn-success btn-lg add-activity" ng-click="addskill()" ng-disabled='skill == ""'>Add Skill
+        </button>
+        <br/>
+
+        <div class="activities-in-form">
+            <span ng-repeat="skill in skillsArray">{{ skill }}
+                <i class="fa fa-times-circle" ng-click="deleteSkill($index)"></i> |</span>
+        </div>
+        <input type="text" name="upload" ng-model="data.upload" placeholder="Upload pictures and videos"/>
+        <br>
+
+        <div class="text-center">
+            <button class="btn btn-info btn-lg">Finish!</button>
+        </div>
+    </form>
+</div>

@@ -1,5 +1,5 @@
 angular.module("activities")
-    .controller("personalController", function ($scope) {
+    .controller("profileFormController", function ($scope) {
         console.log("I am in personalController :)")
         $scope.skill = "";
         $scope.skillsArray = [];
@@ -10,5 +10,9 @@ angular.module("activities")
             $scope.skill = "";
         }
 
+        $scope.skillsArray = ["Scuba diving", "Basketball", "Cooking"];
 
+        $scope.deleteSkill = function (index) {
+            console.log(":)" + index + ":)");
+        }
     });
