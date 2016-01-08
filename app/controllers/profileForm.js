@@ -1,4 +1,4 @@
-angular.module("activities")
+angular.module("activities");
     .controller("profileFormController", function ($scope) {
         console.log("I am in personalController :)")
         $scope.skill = "";
@@ -10,9 +10,10 @@ angular.module("activities")
             $scope.skill = "";
         }
 
-        $scope.skillsArray = ["Scuba diving", "Basketball", "Cooking"];
+        $scope.skillsArray = [];
 
         $scope.deleteSkill = function (index) {
             console.log(":)" + index + ":)");
         }
+                    
     });
