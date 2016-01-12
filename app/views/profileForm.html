@@ -3,19 +3,26 @@
 
     <form class="profile-form" name="profileForm" novalidate>
 
-        <input type="text" name="fullname" ng-model="user.fullname" placeholder="Enter your full name"
+        <input type="text" name="fullname" ng-model="user.fullname" ng-focus="showFullnameError = false" placeholder="Enter your full name"
                required="required"/>
+        <p class="error-message" ng-show="showFullnameError">You have to fill the full name</p>
         <br/>
 
-        <input type="text" name="username" ng-model="user.name" placeholder="Enter a username" required="required"/>
-        <br>
-        <input type="password" name="password" ng-model="user.password" placeholder="Enter a password" required="required"/>
+        <input type="text" name="username" ng-model="user.name" ng-focus="showUsernameError = false" placeholder="Enter a username" required="required"/>
+        <p class="error-message" ng-show="showUsernameError">You have to fill the username</p>
 
-        <p> *5-10 characters.</p>
         <br>
-        <input type="email" name="e-mail" ng-model="user.email" placeholder="Enter your e-mail" required="required"/>
+        <input type="password" name="password" ng-model="user.password" ng-focus="showPasswordError = false; showPasswordLengthError = false" placeholder="Enter a password" required="required"/>
+
+        <p class="error-message" ng-show="showPasswordLengthError"> *5-10 characters.</p>
+        <p class="error-message" ng-show="showPasswordError">You have to fill the password</p>
+
         <br>
-        <input type="text" ng-model="skill" name="Talentsandskills" placeholder="Enter your skill"/>
+        <input type="email" name="e-mail" ng-model="user.email" ng-focus="showEmailError = false" placeholder="Enter your e-mail" required="required"/>
+        <p class="error-message" ng-show="showEmailError">You have to fill the email</p>
+
+        <br>
+        <input type="text" ng-model="skill" name="Talentsandskills" ng-focus="showSkillsError = false" placeholder="Enter your skill"/>
         <button class="btn btn-success btn-lg add-activity" ng-click="addskill()" ng-disabled='skill == ""'>Add Skill
         </button>
         <br/>
@@ -23,6 +30,8 @@
             <span ng-repeat="skill in skillsArray">{{ skill }}
                 <i class="fa fa-times-circle" ng-click="deleteSkill($index)"></i> |</span>
         </div>
+        <p class="error-message" ng-show="showSkillsError">You have to fill at least one skill</p>
+
 
         <!--<select ng-model="country">
             <option value=""> Select a Country</option>
@@ -39,6 +48,10 @@
 
         <div class="text-center">
             <button class="btn btn-info btn-lg" ng-click="createUser()">Finish!</button>
+        </div>
+
+        <div class="error-messages">
+            <div ng-repeat="error in errorArray">{{error}}</div>
         </div>
     </form>
 </div>

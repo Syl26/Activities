@@ -75,4 +75,7 @@
     border-radius: 5px;
 }
 
-/*PROFILE*/
+/*PROFILE FORM*/
+.error-message {
+    color: #E64E4E;
+}

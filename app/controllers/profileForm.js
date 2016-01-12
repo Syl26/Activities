@@ -4,6 +4,13 @@ angular.module("activities")
 
         $scope.user = {};
 
+        $scope.showPasswordError = false;
+        $scope.showFullnameError = false;
+        $scope.showUsernameError = false;
+        $scope.showEmailError = false;
+        $scope.showSkillsError = false;
+        $scope.showPasswordLengthError = false;
+
         $scope.skill = "";
         $scope.skillsArray = [];
         $scope.addskill = function () {
@@ -20,7 +27,7 @@ angular.module("activities")
         };
 
         $scope.createUser = function () {
-            if(!checkForm()) {
+            if (!checkForm()) {
                 return;
             }
 
@@ -29,25 +36,57 @@ angular.module("activities")
             console.log("Save this user in the databse");
 
             clearForm();
+
         };
 
-        var clearForm = function() {
+        var clearForm = function () {
             $scope.user = {};
             $scope.skillsArray = [];
+
+            $scope.showPasswordError = false;
+            $scope.showFullnameError = false;
+            $scope.showUsernameError = false;
+            $scope.showEmailError = false;
+            $scope.showSkillsError = false;
+            $scope.showPasswordLengthError = false;
         };
 
-        var checkForm = function() {
+        var checkForm = function () {
+            var result = true;
+
             if (!$scope.user.name) {
-                console.log("You have to fill the name");
-                return false;
+                $scope.showUsernameError = true;
+                result = false;
             }
 
-            if(!$scope.email) {
-                console.log("You have to fill the email");
-                return false;
+            if (!$scope.user.fullname) {
+                $scope.showFullnameError = true;
+                result = false;
             }
 
-            console.log("everything was ok in validation");
-            return true;
+            if (!$scope.user.password) {
+                $scope.showPasswordError = true;
+                result = false;
+            }
+
+            if($scope.user.password != undefined &&
+                $scope.user.password != null &&
+                $scope.user.password.length < 5)
+            {
+                $scope.showPasswordLengthError = true;
+                result = false;
+            }
+
+            if (!$scope.user.email) {
+                $scope.showEmailError = true;
+                result = false;
+            }
+
+            if($scope.skillsArray.length == 0) {
+                $scope.showSkillsError = true;
+                result = false;
+            }
+
+            return result;
         };
     });
